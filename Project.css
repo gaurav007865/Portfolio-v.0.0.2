@@ -161,36 +161,104 @@ h2 {
   left: 100%;
 }
 /* ==========================================================
-   ⭐ PERFECT MOBILE RESPONSIVE CSS FOR PROJECTS PAGE 
-   (PASTE AT END OF PROJECT.CSS)
+   📌 UNIVERSAL RESPONSIVE SYSTEM FOR PROJECTS PAGE
+   1400px / 1200px / 1024px / 900px / 768px / 600px / 360px
 ========================================================== */
 
-/* Tablet View */
-@media (max-width: 900px) {
 
+/* ================== 1️⃣ LARGE DESKTOP (1400px+) ================== */
+@media (min-width: 1400px) {
   section {
-    padding: 25px;
+    max-width: 1400px;
   }
-
-  #Mypro {
-    font-size: 28px;
-  }
-
-  /* Control bar stack */
-  .control-bar {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-  }
-
-  #searchBox,
-  #categoryFilter {
-    width: 85% !important;
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 
-/* Mobile View */
+/* ================== 2️⃣ LAPTOPS (1025px – 1399px) ================== */
+@media (max-width: 1399px) and (min-width: 1025px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #searchBox,
+  #categoryFilter {
+    width: 260px;
+  }
+}
+
+
+/* ================== 3️⃣ SMALL LAPTOP / TABLET LANDSCAPE (900px–1024px) ================== */
+@media (max-width: 1024px) and (min-width: 900px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ================== 4️⃣ TABLET PORTRAIT (768px–899px) ================== */
+@media (max-width: 899px) and (min-width: 768px) {
+
+  section {
+    padding: 30px;
+  }
+
+  #Mypro {
+    font-size: 30px;
+  }
+
+  .control-bar {
+    gap: 16px;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  #searchBox,
+  #categoryFilter {
+    width: 70% !important;
+  }
+}
+
+
+/* ================== 5️⃣ MOBILE LARGE (600–767px) ================== */
+@media (max-width: 767px) and (min-width: 600px) {
+
+  section {
+    padding: 20px;
+  }
+
+  #Mypro {
+    font-size: 26px;
+  }
+
+  .control-bar {
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
+  }
+
+  #searchBox,
+  #categoryFilter {
+    width: 100% !important;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+
+/* ================== 6️⃣ MOBILE (0–600px) ================== */
 @media (max-width: 600px) {
 
   section {
@@ -199,7 +267,6 @@ h2 {
 
   #Mypro {
     font-size: 24px;
-    margin-bottom: 20px;
   }
 
   /* Search + Filter FULL WIDTH */
@@ -225,7 +292,6 @@ h2 {
     width: 92%;
     margin: auto;
     padding: 18px;
-    border-radius: 14px;
   }
 
   .project-card h3 {
@@ -243,7 +309,6 @@ h2 {
     font-size: 15px;
   }
 
-  /* Bio Box */
   .bio-section {
     width: 92%;
     margin: 20px auto;
@@ -253,7 +318,7 @@ h2 {
 }
 
 
-/* Small Phones: 360px and below */
+/* ================== 7️⃣ SMALL PHONES (0–360px) ================== */
 @media (max-width: 360px) {
 
   #Mypro {

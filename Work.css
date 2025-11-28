@@ -105,105 +105,82 @@ body {
   color: #00adb5;
   margin: 0;
 }
-
 /* ==========================================================
-   ⭐ PERFECT MOBILE RESPONSIVE CSS FOR WORK PAGE
+   ⭐ UNIVERSAL VIEWPORT ALIGNMENT FIX (ALL DEVICES)
 ========================================================== */
 
-/* Tablets and medium screens */
-@media (max-width: 900px) {
-
-  .work-section {
-    margin-top: 40px;
+/* Very large screens (1400px+) */
+@media (min-width: 1400px) {
+  .work-container {
+    max-width: 1300px;
   }
+}
 
-  .work-section h1 {
-    font-size: 2rem;
+/* Standard laptops (1200px - 1399px) */
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .work-container {
+    max-width: 1100px;
+    gap: 30px;
   }
+}
 
+/* Small laptops + tablets landscape (992px - 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .work-container {
+    grid-template-columns: 1fr 0.5fr 1fr;
+    gap: 22px;
+  }
+  .work-card {
+    padding: 22px;
+  }
+}
+
+/* Tablets portrait (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .work-container {
+    grid-template-columns: 1fr 0.2fr 1fr;
+    padding: 0 20px;
+  }
   .work-card {
     padding: 20px;
   }
 }
 
-/* Mobile View */
-@media (max-width: 600px) {
-
-  /* Section spacing */
-  .work-section {
-    margin-top: 30px;
-    padding: 0 12px;
-  }
-
-  .work-section h1 {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-
-  /* Convert grid to single column */
+/* Large Mobile (600px - 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
   .work-container {
     grid-template-columns: 1fr !important;
-    width: 100%;
-    gap: 18px;
-    padding: 0 8px;
   }
-
-  /* Remove empty space boxes */
-  .empty-space {
-    display: none !important;
-  }
-
-  /* Work Cards full width */
   .work-card {
-    width: 92%;
+    width: 95%;
     margin: auto;
-    padding: 18px;
-  }
-
-  /* Icons */
-  .work-card i {
-    font-size: 32px;
-    margin-bottom: 8px;
-  }
-
-  /* Card Title */
-  .work-card h3 {
-    font-size: 16px;
-  }
-
-  /* Footer */
-  .footer-line {
-    width: 100%;
-    margin-top: 30px;
-    padding: 12px 0;
-  }
-
-  .footer-line h1 {
-    font-size: 1.3rem;
+    padding: 20px;
   }
 }
 
-/* Extra Small Phones (Below 400px) */
-@media (max-width: 400px) {
-
-  .work-section h1 {
-    font-size: 1.6rem;
+/* Mobile (0px - 600px) */
+@media (max-width: 600px) {
+  .work-section {
+    margin-top: 25px;
   }
-
+  .work-container {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+    width: 100%;
+  }
   .work-card {
+    width: 92%;
+    padding: 18px;
+  }
+}
+
+/* Very small mobiles (below 380px) */
+@media (max-width: 380px) {
+  .work-card {
+    width: 96%;
     padding: 15px;
-    width: 95%;
   }
-
   .work-card i {
-    font-size: 28px;
-  }
-
-  .work-card h3 {
-    font-size: 15px;
-  }
-
-  .footer-line h1 {
-    font-size: 1.1rem;
+    font-size: 26px;
   }
 }

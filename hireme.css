@@ -135,103 +135,110 @@
     0% { transform: scale(0.5); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
-
 /* ==========================================================
-   ⭐ PERFECT MOBILE RESPONSIVE CSS FOR HIRE ME PAGE
+   ⭐ UNIVERSAL RESPONSIVE VIEWPORT SYSTEM (FINAL VERSION)
+   Works for ALL DEVICES: 4K, laptop, tablet, mobile, small phone
 ========================================================== */
 
-/* Tablet (max-width: 900px) */
-@media (max-width: 900px) {
-
+/* Desktop 4K & Big Screens */
+@media (min-width: 1600px) {
     .hire-me-section {
-        margin-left: 40px;
-        margin-top: 100px;
-        max-width: 380px;
-    }
-
-    #hireForm {
-        width: 320px;
-    }
-
-    #hireTitle {
-        font-size: 2.4rem;
+        margin-left: 180px !important;
+        max-width: 520px !important;
     }
 }
 
-
-/* Mobile View (max-width: 600px) */
-@media (max-width: 600px) {
-
-    /* Center content */
+/* Normal Laptops (1200px – 1599px) */
+@media (max-width: 1599px) and (min-width: 1200px) {
     .hire-me-section {
-        margin: 80px auto 0 auto !important;
-        max-width: 90% !important;
+        margin-left: 120px !important;
+        max-width: 480px !important;
+    }
+}
+
+/* Small Laptops (992px – 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .hire-me-section {
+        margin-left: 80px !important;
+        max-width: 450px;
+    }
+}
+
+/* Tablets (768px – 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .hire-me-section {
+        margin-left: 40px !important;
+        margin-top: 100px;
+        max-width: 380px !important;
+    }
+    #hireForm {
+        width: 330px !important;
+    }
+}
+
+/* Large Mobiles (600px – 767px) */
+@media (max-width: 767px) and (min-width: 600px) {
+    .hire-me-section {
+        margin: 80px auto !important;
+        max-width: 75% !important;
         text-align: center !important;
     }
-
-    #hireTitle {
-        font-size: 2rem;
-        text-align: center !important;
-        margin-bottom: 20px;
-    }
-
-    /* Form full-width */
     #hireForm {
         width: 100% !important;
-        gap: 10px;
-        margin: 0 auto;
-    }
-
-    #hireForm label {
-        text-align: left;
-        font-size: 1rem;
-    }
-
-    #hireForm input,
-    #hireForm textarea {
-        font-size: 0.95rem;
-        padding: 10px;
-    }
-
-    .contact-button {
-        padding: 10px;
-        font-size: 1.1rem;
-    }
-
-    /* Popup */
-    .popup-content {
-        width: 85%;
-        padding: 20px;
-    }
-
-    .popup-content h2 {
-        font-size: 1.4rem;
+        margin: auto;
     }
 }
 
-
-/* Extra Small Phones (max-width: 400px) */
-@media (max-width: 400px) {
-
+/* Normal Mobile (480px – 599px) */
+@media (max-width: 599px) and (min-width: 480px) {
+    .hire-me-section {
+        margin: 70px auto !important;
+        max-width: 85% !important;
+        text-align: center !important;
+    }
     #hireTitle {
-        font-size: 1.7rem;
+        font-size: 2rem !important;
     }
+}
 
+/* Small Phones (360px – 479px) */
+@media (max-width: 479px) and (min-width: 360px) {
+    .hire-me-section {
+        margin: 60px auto !important;
+        max-width: 92% !important;
+        text-align: center !important;
+    }
+    #hireTitle {
+        font-size: 1.8rem !important;
+    }
+    #hireForm input,
+    #hireForm textarea {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Ultra Small Phones (0 – 359px) */
+@media (max-width: 359px) {
+    .hire-me-section {
+        margin: 50px auto !important;
+        max-width: 95% !important;
+    }
+    #hireTitle {
+        font-size: 1.6rem !important;
+    }
+    #hireForm {
+        width: 100% !important;
+        gap: 8px !important;
+    }
     #hireForm label {
-        font-size: 0.95rem;
+        font-size: 0.9rem !important;
     }
-
     .contact-button {
-        font-size: 1rem;
-        padding: 8px;
+        font-size: 0.9rem !important;
+        padding: 8px !important;
     }
-
     .popup-content {
-        width: 90%;
-        padding: 18px;
-    }
-
-    .popup-content h2 {
-        font-size: 1.2rem;
+        width: 92% !important;
+        padding: 14px !important;
     }
 }

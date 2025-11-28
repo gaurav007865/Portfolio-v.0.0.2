@@ -109,104 +109,49 @@ h1 {
     font-size: 2rem;
   }
 }
-/* =================================================================
-   ⭐ PERFECT RESPONSIVE CSS FOR SKILLS PAGE (MOBILE + TABLET)
-================================================================= */
+/* =====================================================
+   ⭐ SAME SIZE SKILL BOXES ON MOBILE (PERFECT GRID)
+===================================================== */
 
-/* Tablet View */
-@media (max-width: 900px) {
-
-  h1 {
-    font-size: 2.2rem;
-    margin-top: 30px;
-  }
-
-  .skills-container {
-    width: 90% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-    padding: 25px;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-
-  .skill-card {
-    padding: 18px;
-  }
-
-  .bio {
-    max-width: 90% !important;
-    margin: 0 auto 40px auto !important;
-    text-align: center !important;
-  }
-}
-
-
-/* Mobile View */
 @media (max-width: 600px) {
 
-  /* Center Heading */
-  h1 {
-    font-size: 1.9rem;
-    margin-top: 25px;
-  }
-
-  /* Grid centered + full width */
+  /* Make grid equal sized */
   .skills-container {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
     width: 95% !important;
-    padding: 20px;
     margin: 0 auto !important;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 15px;
-    text-align: center !important;
   }
 
-  /* Skill Cards */
+  /* Equal size cards */
   .skill-card {
-    padding: 15px;
+    height: 120px !important;   /* fixed equal height */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
   }
 
-  /* Icon size shrink for phones */
   .skill-icon {
-    font-size: 1.8rem;
-    margin-bottom: 8px;
+    font-size: 1.8rem !important;
+    margin: 0 !important;
   }
 
   .skill-name {
-    font-size: 1rem;
-  }
-
-  /* BIO center */
-  .bio {
-    font-size: 0.95rem;
-    max-width: 90% !important;
-    margin: 0 auto 30px auto !important;
-    text-align: center !important;
+    font-size: 0.95rem !important;
+    margin-top: 6px !important;
   }
 }
 
-
-/* Extra Small Phones (Below 400px) */
+/* Extra small phones → 1 column equal boxes */
 @media (max-width: 400px) {
 
-  h1 {
-    font-size: 1.6rem;
-  }
-
   .skills-container {
-    grid-template-columns: 1fr !important;   /* 1 column */
-    gap: 14px;
+    grid-template-columns: 1fr !important;
   }
 
   .skill-card {
-    padding: 14px;
-  }
-
-  .skill-icon {
-    font-size: 1.6rem;
-  }
-
-  .bio {
-    font-size: 0.9rem;
+    height: 130px !important;
   }
 }
