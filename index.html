@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- VANTA JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND ANIMATION TARGET -->
+    <div id="vanta-bg">
+
+        <b><h1 id="Name">Gaurav</h1></b>
+<button id="themeToggle" class="theme-btn">Change Theme</button>
+
+        <div class="Buttons">
+
+            <a href="about.html">
+                <h3> <button>About</button></h3>
+            </a>
+
+            <a href="Project.html">
+                <h3><button>Projects</button></h3>
+            </a>
+
+            <a href="Skill.html">
+                <h3> <button>Skill</button></h3>
+            </a>
+
+            <a href="Work.html">
+                <h3> <button>Work</button></h3>
+            </a>
+
+            <a href="https://www.technocrat.asterisc.in/">
+                <h3><button>Certification</button></h3>
+            </a>
+
+            <a id="hme" href="hireme.html">
+                <h3><button>Hire me</button></h3>
+            </a>
+        </div>
+
+        <!-- <p class="intro">
+            I'm <span class="highlight">Gaurav Kanade</span>, a Full Stack Developer building creative and scalable web applications.
+        </p> -->
+
+        <!-- <p class="education">
+            I'm currently pursuing my Diploma in Information Technology Engineering at Priyardarshani Polytechnic Nagpur.
+            I specialize in both frontend and backend development, transforming ideas into functional digital experiences.
+        </p> -->
+
+    </div>
+
+
+    <!-- VANTA + SCATTER EFFECT SCRIPT -->
+    <script>
+        let vantaEffect = VANTA.BIRDS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            backgroundAlpha: 0, 
+            separation: 60,
+            cohesion: 5,
+            alignment: 5
+        });
+
+        // SCATTER / FLEE EFFECT
+        document.addEventListener("mousemove", (e) => {
+            if (!vantaEffect) return;
+
+            let x = (e.clientX / window.innerWidth) * 2 - 1;
+            let y = (e.clientY / window.innerHeight) * 2 - 1;
+
+            vantaEffect.mouseX = -x * 200;
+            vantaEffect.mouseY = -y * 200;
+        });
+
+
+   
+document.getElementById("themeToggle").addEventListener("click", function () {
+    
+    // Toggle dark/light theme class
+    document.body.classList.toggle("light-theme");
+
+    // Button text switch
+    if (document.body.classList.contains("light-theme")) {
+        this.innerText = "Switch to Dark";
+    } else {
+        this.innerText = "Switch to Light";
+    }
+});
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Skills</title>
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- VANTA GLOBE LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+
+  <!-- YOUR CSS -->
+  <link rel="stylesheet" href="Skill.css" />
+</head>
+
+<body>
+
+  <!-- VANTA BACKGROUND -->
+  <div id="vanta-bg"></div>
+
+  <h1>My Skills</h1>
+
+  <div class="skills-container">
+
+    <div class="skill-card">
+      <i class="fab fa-html5 skill-icon"></i>
+      <div class="skill-name">HTML</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-css3-alt skill-icon"></i>
+      <div class="skill-name">CSS</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-java skill-icon"></i>
+      <div class="skill-name">Java</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-code skill-icon"></i>
+      <div class="skill-name">C</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-code skill-icon"></i>
+      <div class="skill-name">C++</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-js skill-icon"></i>
+      <div class="skill-name">JavaScript</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-git-alt skill-icon"></i>
+      <div class="skill-name">Git</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-github skill-icon"></i>
+      <div class="skill-name">GitHub</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fab fa-node-js skill-icon"></i>
+      <div class="skill-name">Node.js</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-database skill-icon"></i>
+      <div class="skill-name">MongoDB</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-table skill-icon"></i>
+      <div class="skill-name">Excel</div>
+    </div>
+
+    <div class="skill-card">
+      <i class="fas fa-file-word skill-icon"></i>
+      <div class="skill-name">MS Word</div>
+    </div>
+
+  </div>
+
+  <p class="bio">
+    I am passionate about building modern and efficient web applications.
+    With a strong foundation in frontend and backend technologies, I enjoy
+    transforming ideas into real-world projects.
+  </p>
+
+  <!-- INITIALIZE VANTA GLOBE -->
+  <script>
+    VANTA.GLOBE({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x00ffd5,
+      backgroundColor: 0x000000,
+    });
+  </script>
+
+</body>
+
+</html>

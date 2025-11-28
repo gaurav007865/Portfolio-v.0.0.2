@@ -1,0 +1,212 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.animated-heading {
+    text-align: center;
+    font-size: 48px;
+    /* Gradient color text */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Text shadow for depth */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+    animation: fadeInSlide 1.5s ease-out;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Animation keyframes */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  color:white;
+}
+
+.profile-img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item i {
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+/* Individual icon colors */
+.skill-item .fa-html5 {
+    color: #e34c26;
+}
+.skill-item .fa-css3-alt {
+    color: #264de4;
+}
+.skill-item .fa-js {
+    color: #f0db4f;
+}
+.skill-item .fa-react {
+    color: #61dafb;
+}
+.skill-item .fa-node-js {
+    color: #3c873a;
+}
+.skill-item .fa-database {
+    color: #00758f;
+}
+.skill-item .fa-git-alt {
+    color: #f1502f;
+}
+
+.skill-item span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Hover effect */
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.contact {
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+}
+
+.contact p i {
+    margin-right: 8px;
+    color: #333;
+}
+
+.contact p a {
+    text-decoration: none;
+    color: #0073b1; /* लिंक का रंग */
+}
+
+.contact p a:hover {
+    text-decoration: underline;
+}
+.profile-img {
+    width: 210px;      /* A4 width */
+    height: 297px;    /* A4 height */
+    object-fit: cover; /* अगर फोटो proportion maintain करनी हो, 'contain' या 'cover' रखो */
+    display: block;
+    margin: 0 auto;    /* Center में लाने के लिए */
+    border: 2px solid #333; /* Optional border */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* Optional shadow */
+}
+/* mmmm */
+
+body {
+  /* Background image URL */
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e'); /* यहां अपनी पसंद का URL डालें या local image path */
+  
+  /* Make sure it covers full page */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* scroll करते वक्त image fix रहे */
+  background-position: center;
+  
+  /* Optional: Text को readable रखने के लिए overlay या background color */
+  color: #ffffff; /* White text */
+}
+
+/* Optional: container का background थोड़ा transparent */
+.container {
+  background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
+  padding: 20px;
+  border-radius: 10px;
+}
+/* Extra Add */
+
+
+/* Responsive adjustments for mobile screens */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  .animated-heading {
+    font-size: 32px;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .skills {
+    justify-content: center;
+  }
+
+  .skill-item {
+    width: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .animated-heading {
+    font-size: 24px;
+  }
+
+  .skill-item {
+    width: 80%;
+  }
+
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: auto;
+  }
+}

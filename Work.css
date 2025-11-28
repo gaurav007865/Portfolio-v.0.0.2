@@ -1,0 +1,108 @@
+/* BACKGROUND */
+#vanta-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+}
+
+/* OVERLAY */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #eee;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* WORK SECTION */
+.work-section {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.work-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00adb5;
+}
+
+/* GRID LAYOUT: 3 COLUMNS */
+.work-container {
+  display: grid;
+  grid-template-columns: 1fr 0.7fr 1fr; /* LEFT - EMPTY - RIGHT */
+  max-width: 1100px;
+  margin: auto;
+  gap: 25px;
+}
+
+/* LEFT & RIGHT CARDS */
+.work-card {
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,255,0.3);
+  background: rgba(0,0,0,0.25); /* Transparent */
+  position: relative;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+/* Prevent animation inside cards */
+.work-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;
+}
+
+/* Hover effect */
+.work-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 0 15px rgba(0,255,255,0.4);
+}
+
+/* ICON */
+.work-card i {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #00adb5;
+}
+
+/* CENTER EMPTY SPACE */
+.empty-space {
+  background: transparent;
+}
+
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .work-container {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+  .empty-space {
+    display: none;
+  }
+}
+.footer-line {
+  grid-column: 1 / 4;  /* covers left + center + right columns */
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0;
+}
+
+.footer-line h1 {
+  font-size: 1.8rem;
+  color: #00adb5;
+  margin: 0;
+}
+

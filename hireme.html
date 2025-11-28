@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire Me</title>
+
+    <!-- VANTA RINGS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+
+    <link rel="stylesheet" href="hireme.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div id="vanta-bg"></div>
+
+    <!-- LEFT CONTENT -->
+    <section class="hire-me-section">
+
+        <h1 id="hireTitle">Hire Me</h1>
+
+        <form id="hireForm">
+
+            <label>Your Name</label>
+            <input type="text" name="name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="email" required>
+
+            <label>Your Phone</label>
+            <input type="text" name="phone" required>
+
+            <label>Preferred Start Date</label>
+            <input type="date" name="date" required>
+
+            <label>Why do you want to hire me?</label>
+            <textarea name="message" required></textarea>
+
+            <button type="submit" class="contact-button">Submit</button>
+
+            <p id="formStatus"></p>
+        </form>
+
+    </section>
+
+    <!-- SUCCESS POPUP -->
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <h2>✔ Submitted Successfully!</h2>
+            <p>Your response has been recorded.</p>
+            <button id="closePopup">OK</button>
+        </div>
+    </div>
+
+
+    <!-- VANTA INIT -->
+    <script>
+        VANTA.RINGS({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x00ffff,
+            backgroundColor: 0x000000
+        });
+    </script>
+
+    <!-- ⭐ FINAL FORM SUBMIT SCRIPT (CORS-FREE + POPUP) -->
+    <script>
+        document.getElementById("hireForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: this.name.value,
+                email: this.email.value,
+                phone: this.phone.value,
+                date: this.date.value,
+                message: this.message.value
+            };
+
+            let status = document.getElementById("formStatus");
+            status.innerHTML = "Submitting...";
+            status.style.color = "yellow";
+
+            try {
+                await fetch("https://script.google.com/macros/s/AKfycbzi2VK2huU_uLAKnDTblRNskXQDy2J5huOOR0LZL542lKoyTMqeeD0gL4FZGJgfhnWj/exec", {
+                    method: "POST",
+                    mode: "no-cors",
+                    body: JSON.stringify(formData)
+                });
+
+                // RESET STATUS
+                status.innerHTML = "";
+
+                // SHOW SUCCESS POPUP
+                document.getElementById("successPopup").style.display = "flex";
+
+                // AUTO CLOSE
+                setTimeout(() => {
+                    document.getElementById("successPopup").style.display = "none";
+                }, 2500);
+
+                // RESET FORM
+                this.reset();
+
+            } catch (error) {
+                status.innerHTML = "❌ Error submitting form!";
+                status.style.color = "red";
+            }
+        });
+
+        // OK BUTTON → CLOSE POPUP
+        document.getElementById("closePopup").onclick = () => {
+            document.getElementById("successPopup").style.display = "none";
+        };
+    </script>
+
+</body>
+</html>

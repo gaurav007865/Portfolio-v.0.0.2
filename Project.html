@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Project.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- VANTA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Background -->
+  <div id="vanta-bg"></div>
+
+  <section id="projects">
+    <h2 id="Mypro">💼 My Projects</h2>
+
+    <!-- SEARCH + FILTER -->
+    <div class="control-bar">
+      <input type="text" id="searchBox" placeholder="Search projects...">
+      
+      <select id="categoryFilter">
+        <option value="all">All</option>
+        <option value="java">Java</option>
+        <option value="javascript">JavaScript</option>
+        <option value="frontend">Frontend</option>
+        <option value="management">Management</option>
+      </select>
+    </div>
+
+    <!-- PROJECTS WILL LOAD HERE -->
+    <div class="projects" id="projectContainer"></div>
+
+    <section class="bio-section">
+      <p>
+        This page is connected directly with Database.<br>
+        Whenever I add new projects in Database, they appear here automatically.
+      </p>
+    </section>
+  </section>
+
+  <!-- VANTA INIT -->
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      color: 0x00ffff,
+      backgroundColor: 0x000000
+    });
+  </script>
+
+  <!-- MAIN JS -->
+  <script>
+    let allProjects = [];
+
+    // AUTO ICON MAP
+    const ICON_MAP = {
+      bank: "fa-university",
+      movie: "fa-ticket-alt",
+      ticket: "fa-ticket-alt",
+      html: "fa-html5",
+      css: "fa-css3-alt",
+      js: "fa-js",
+      javascript: "fa-js",
+      java: "fa-java",
+      code: "fa-code",
+      plane: "fa-plane",
+      flight: "fa-plane",
+      calendar: "fa-calendar-alt",
+      hotel: "fa-hotel",
+      atm: "fa-credit-card",
+      github: "fa-github",
+      management: "fa-briefcase"
+    };
+
+    // JSONP CALLBACK
+    function loadData(data) {
+      console.log("Live Projects Loaded:", data);
+      allProjects = data;
+      displayProjects(data);
+    }
+
+    // DISPLAY PROJECTS
+    function displayProjects(list) {
+      const container = document.getElementById("projectContainer");
+      container.innerHTML = "";
+
+      list.forEach(p => {
+        const iconClass = ICON_MAP[p.icon?.toLowerCase()] || "fa-folder-open";
+
+        container.innerHTML += `
+          <div class="project-card">
+            <h3><i class="fas ${iconClass}"></i> ${p.title}</h3>
+            <p>${p.description}</p>
+            <a href="${p.link}" target="_blank">View Project</a>
+          </div>
+        `;
+      });
+    }
+
+    // SEARCH
+    document.getElementById("searchBox").addEventListener("input", function () {
+      const keyword = this.value.toLowerCase();
+      const results = allProjects.filter(p =>
+        p.title.toLowerCase().includes(keyword) ||
+        p.description.toLowerCase().includes(keyword)
+      );
+      displayProjects(results);
+    });
+
+    // FILTER
+    document.getElementById("categoryFilter").addEventListener("change", function () {
+      const cat = this.value;
+      if (cat === "all") {
+        displayProjects(allProjects);
+      } else {
+        const results = allProjects.filter(p => p.category.toLowerCase() === cat);
+        displayProjects(results);
+      }
+    });
+  </script>
+
+  <!-- JSONP DATA REQUEST (LIVE DATA) -->
+  <script src="https://script.google.com/macros/s/AKfycbxotw8NR9fhlzJ6Krfv7c9s57Kz74qasS_lcDnJibYYCGo7ciKfA_2aaK8cZdOWOX7ScA/exec?callback=loadData"></script>
+
+</body>
+</html>
