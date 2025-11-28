@@ -109,3 +109,104 @@ h1 {
     font-size: 2rem;
   }
 }
+/* =================================================================
+   ⭐ PERFECT RESPONSIVE CSS FOR SKILLS PAGE (MOBILE + TABLET)
+================================================================= */
+
+/* Tablet View */
+@media (max-width: 900px) {
+
+  h1 {
+    font-size: 2.2rem;
+    margin-top: 30px;
+  }
+
+  .skills-container {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+    padding: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .skill-card {
+    padding: 18px;
+  }
+
+  .bio {
+    max-width: 90% !important;
+    margin: 0 auto 40px auto !important;
+    text-align: center !important;
+  }
+}
+
+
+/* Mobile View */
+@media (max-width: 600px) {
+
+  /* Center Heading */
+  h1 {
+    font-size: 1.9rem;
+    margin-top: 25px;
+  }
+
+  /* Grid centered + full width */
+  .skills-container {
+    width: 95% !important;
+    padding: 20px;
+    margin: 0 auto !important;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    text-align: center !important;
+  }
+
+  /* Skill Cards */
+  .skill-card {
+    padding: 15px;
+  }
+
+  /* Icon size shrink for phones */
+  .skill-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .skill-name {
+    font-size: 1rem;
+  }
+
+  /* BIO center */
+  .bio {
+    font-size: 0.95rem;
+    max-width: 90% !important;
+    margin: 0 auto 30px auto !important;
+    text-align: center !important;
+  }
+}
+
+
+/* Extra Small Phones (Below 400px) */
+@media (max-width: 400px) {
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr !important;   /* 1 column */
+    gap: 14px;
+  }
+
+  .skill-card {
+    padding: 14px;
+  }
+
+  .skill-icon {
+    font-size: 1.6rem;
+  }
+
+  .bio {
+    font-size: 0.9rem;
+  }
+}

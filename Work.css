@@ -106,3 +106,104 @@ body {
   margin: 0;
 }
 
+/* ==========================================================
+   ⭐ PERFECT MOBILE RESPONSIVE CSS FOR WORK PAGE
+========================================================== */
+
+/* Tablets and medium screens */
+@media (max-width: 900px) {
+
+  .work-section {
+    margin-top: 40px;
+  }
+
+  .work-section h1 {
+    font-size: 2rem;
+  }
+
+  .work-card {
+    padding: 20px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+
+  /* Section spacing */
+  .work-section {
+    margin-top: 30px;
+    padding: 0 12px;
+  }
+
+  .work-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  /* Convert grid to single column */
+  .work-container {
+    grid-template-columns: 1fr !important;
+    width: 100%;
+    gap: 18px;
+    padding: 0 8px;
+  }
+
+  /* Remove empty space boxes */
+  .empty-space {
+    display: none !important;
+  }
+
+  /* Work Cards full width */
+  .work-card {
+    width: 92%;
+    margin: auto;
+    padding: 18px;
+  }
+
+  /* Icons */
+  .work-card i {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  /* Card Title */
+  .work-card h3 {
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer-line {
+    width: 100%;
+    margin-top: 30px;
+    padding: 12px 0;
+  }
+
+  .footer-line h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Extra Small Phones (Below 400px) */
+@media (max-width: 400px) {
+
+  .work-section h1 {
+    font-size: 1.6rem;
+  }
+
+  .work-card {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .work-card i {
+    font-size: 28px;
+  }
+
+  .work-card h3 {
+    font-size: 15px;
+  }
+
+  .footer-line h1 {
+    font-size: 1.1rem;
+  }
+}

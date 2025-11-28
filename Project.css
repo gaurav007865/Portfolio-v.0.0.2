@@ -160,3 +160,127 @@ h2 {
 .project-card a:hover::after {
   left: 100%;
 }
+/* ==========================================================
+   ⭐ PERFECT MOBILE RESPONSIVE CSS FOR PROJECTS PAGE 
+   (PASTE AT END OF PROJECT.CSS)
+========================================================== */
+
+/* Tablet View */
+@media (max-width: 900px) {
+
+  section {
+    padding: 25px;
+  }
+
+  #Mypro {
+    font-size: 28px;
+  }
+
+  /* Control bar stack */
+  .control-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  #searchBox,
+  #categoryFilter {
+    width: 85% !important;
+  }
+}
+
+
+/* Mobile View */
+@media (max-width: 600px) {
+
+  section {
+    padding: 20px 10px;
+  }
+
+  #Mypro {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Search + Filter FULL WIDTH */
+  .control-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #searchBox,
+  #categoryFilter {
+    width: 90% !important;
+    font-size: 15px;
+    padding: 12px !important;
+  }
+
+  /* Project Grid becomes 1 column */
+  .projects {
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+  }
+
+  .project-card {
+    width: 92%;
+    margin: auto;
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .project-card a {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  /* Bio Box */
+  .bio-section {
+    width: 92%;
+    margin: 20px auto;
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+
+
+/* Small Phones: 360px and below */
+@media (max-width: 360px) {
+
+  #Mypro {
+    font-size: 20px;
+  }
+
+  #searchBox,
+  #categoryFilter {
+    width: 95% !important;
+    font-size: 14px;
+  }
+
+  .project-card {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 16px;
+  }
+
+  .project-card p {
+    font-size: 13px;
+  }
+
+  .project-card a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

@@ -194,3 +194,84 @@ body.light-theme #hme button:hover {
   background: #45a049;
   transform: scale(1.05);
 }
+/* ================= MOBILE VIEW FIX (PERFECT RESPONSIVE) ================= */
+@media (max-width: 768px) {
+
+    /* Body */
+    body {
+        padding: 0 10px;
+        overflow-x: hidden;
+        text-align: center;
+    }
+
+    /* Name Heading */
+    #Name {
+        font-size: 2.8rem !important;
+        padding: 4rem 0 !important;
+        letter-spacing: 0.10em !important;
+    }
+
+    /* Theme Button */
+    .theme-btn {
+        top: 10px !important;
+        left: 10px !important;
+        padding: 8px 14px !important;
+        font-size: 13px !important;
+    }
+
+    /* Buttons Group */
+    .Buttons {
+        position: static !important;
+        transform: none !important;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+
+        margin-top: 10px;
+        padding-bottom: 40px;
+    }
+
+    /* Individual Buttons */
+    .Buttons button,
+    #hme button {
+        width: 140px !important;
+        height: 45px !important;
+        font-size: 15px !important;
+    }
+
+    /* Hire Me Button Container */
+    #hme {
+        margin: 20px 0 !important;
+    }
+
+    /* Anchor h3 remove spacing */
+    .Buttons h3,
+    #hme h3 {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* VANTA Background */
+    #vanta-bg {
+        height: 100vh !important;
+    }
+}
+
+/* ======= Extra small mobile (below 420px) ======= */
+@media (max-width: 420px) {
+
+    #Name {
+        font-size: 2.2rem !important;
+        padding: 3rem 0 !important;
+    }
+
+    .Buttons button,
+    #hme button {
+        width: 120px !important;
+        height: 42px !important;
+        font-size: 14px !important;
+    }
+}
+
