@@ -81,8 +81,119 @@ body {
   box-shadow: 0 0 10px cyan;
 }
 
-/* LIGHT THEME */
+/* LIGHT THEME fgh */
 body.light-theme {
+  background: aqua;
+  color: black;
+}
+
+body.light-theme #Name {
+  color: black;
+  text-shadow: none;
+}
+
+/* 🔥 LIGHT THEME – GLASS + SHINE BUTTONS */
+body.light-theme .Buttons button,
+body.light-theme #hme button {
+  background: rgba(255, 255, 255, 0.18);        /* glass */
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  color: black;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine Effect */
+body.light-theme {
+  background: aqua;
+  color: black;
+}
+
+body.light-theme #Name {
+  color: black;
+  text-shadow: none;
+}
+
+/* 🌈 LIGHT THEME – GLASS + SHINE + RAINBOW BORDER ONLY */
+body.light-theme .Buttons button,
+body.light-theme #hme button {
+  background: rgba(255, 255, 255, 0.18);     /* glass */
+  color: black;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;            /* real border hidden */
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/* 🌈 Animated Rainbow Border */
+body.light-theme .Buttons button::after,
+body.light-theme #hme button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;  /* border thickness */
+  border-radius: inherit;
+  background: linear-gradient(
+      90deg,
+      red,
+      orange,
+      yellow,
+      green,
+      cyan,
+      blue,
+      violet,
+      red
+  );
+  background-size: 400%;
+  animation: rainbowBorder 6s linear infinite;
+  -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;   /* shows only BORDER */
+  z-index: -1;
+}
+
+/* Shine effect (same as before) */
+body.light-theme .Buttons button::before,
+body.light-theme #hme button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.7),
+      transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.6s ease;
+  border-radius: inherit;
+}
+
+body.light-theme .Buttons button:hover::before,
+body.light-theme #hme button:hover::before {
+  left: 140%;
+}
+
+body.light-theme .Buttons button:hover,
+body.light-theme #hme button:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.03);
+}
+
+/* Rainbow animation */
+@keyframes rainbowBorder {
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
+}
+
+/* body.light-theme {
   background: aqua;
   color: black;
 }
@@ -98,8 +209,9 @@ body.light-theme #hme button {
 }
 body.light-theme .Buttons button:hover,
 body.light-theme #hme button:hover {
-  background: #45a049;
-}
+   background: #45a049; 
+  
+} */
 
 /* VANTA BACKGROUND ALWAYS BEHIND */
 #vanta-bg {
