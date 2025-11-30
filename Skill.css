@@ -192,3 +192,39 @@ canvas[vanta] {
 }
 
 
+
+
+/* 
+Ye hai mera code */
+
+
+/* FORCE SINGLE COLUMN — MOBILE FINAL FIX */
+@media (max-width: 600px) {
+
+  /* FULL RESET */
+  .projects {
+    display: grid !important;
+    grid-template-columns: 1fr !important;   /* ONLY ONE COLUMN */
+    grid-auto-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 22px !important;
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* EACH CARD FULL WIDTH */
+  .project-card {
+    width: 100% !important;
+    max-width: 380px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 18px !important;
+  }
+
+  /* REMOVE ANY SCREEN SHIFT */
+  body, html {
+    overflow-x: hidden !important;
+  }
+}

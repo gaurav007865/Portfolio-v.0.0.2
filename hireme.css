@@ -278,3 +278,64 @@ canvas[vanta] {
     pointer-events: none !important;
 }
 
+
+
+
+/* =====================================
+   🔥 FINAL MOBILE FORM FIT FIX (0–600px)
+===================================== */
+@media (max-width: 600px) {
+
+    /* Center whole section */
+    .hire-me-section {
+        margin: 60px auto !important;
+        max-width: 90% !important;
+        text-align: center !important;
+        padding: 0 10px !important;
+    }
+
+    /* Form should be full width */
+    #hireForm {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: auto !important;
+        padding: 0 !important;
+        gap: 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Inputs fully responsive */
+    #hireForm input,
+    #hireForm textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 12px !important;
+        font-size: 1rem !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Title size optimized */
+    #hireTitle {
+        font-size: 2rem !important;
+        text-align: center !important;
+    }
+
+    /* Submit button full width */
+    .contact-button {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 1.1rem !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Popup also responsive */
+    .popup-content {
+        width: 90% !important;
+        padding: 20px !important;
+    }
+
+    /* Prevent any overflow */
+    html, body {
+        overflow-x: hidden !important;
+    }
+}

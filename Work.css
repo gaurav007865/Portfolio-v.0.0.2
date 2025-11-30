@@ -220,3 +220,46 @@ canvas[vanta] {
     pointer-events: none !important;
 }
 
+
+
+
+
+/* =================================================
+   🔥 FINAL FIX — MOBILE VIEW (0–600px)
+   PERFECT 1 COLUMN + SAME SIZE CARDS
+================================================== */
+@media (max-width: 600px) {
+
+  /* STRICT ONE COLUMN GRID */
+  .work-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;  /* Only 1 card per row */
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 20px !important;
+    padding: 0 12px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ALL CARDS SAME SIZE + CENTERED */
+  .work-card {
+    width: 100% !important;
+    max-width: 360px !important;   /* SAME CARD SIZE FOR ALL */
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    padding: 20px !important;
+  }
+
+  /* CENTER EMPTY SPACE REMOVE */
+  .empty-space {
+    display: none !important;
+  }
+
+  /* NO OVERFLOW ANYWHERE */
+  html, body {
+    overflow-x: hidden !important;
+  }
+}

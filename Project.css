@@ -384,3 +384,300 @@ canvas[vanta] {
 #vanta-bg canvas {
     pointer-events: none !important;
 }
+
+
+
+
+
+
+
+/* Ye mera code hai */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ===========================
+   HOME PAGE — TITLE
+=========================== */
+#Name {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 8rem 0 5rem 0;
+  letter-spacing: 0.20em;
+  color: rgba(255,255,255,0.55);
+  text-shadow:
+    0 0 6px rgba(255,255,255,0.4),
+    0 0 14px rgba(0,255,255,0.35),
+    0 0 25px rgba(0,255,255,0.25);
+}
+
+/* ===========================
+   RIGHT BUTTON LIST (ALL PAGES)
+=========================== */
+.Buttons {
+  position: fixed;
+  top: 50%;
+  right: 25px;                /* SAFE FOR MOBILE */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 20;
+}
+
+.Buttons button,
+#hme button {
+  width: 150px;
+  height: 48px;
+  font-size: 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(0,255,255,0.5);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.Buttons button:hover,
+#hme button:hover {
+  background: rgba(0,255,255,0.15);
+  border-color: cyan;
+  box-shadow: 0 0 12px cyan;
+  transform: scale(1.03);
+}
+
+/* ===========================
+   THEME BUTTON (ALL PAGES)
+=========================== */
+.theme-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  border: 2px solid cyan;
+  color: white;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.theme-btn:hover {
+  background: rgba(0,255,255,0.2);
+  box-shadow: 0 0 10px cyan;
+}
+
+/* ===========================
+   LIGHT THEME (ALL PAGES)
+=========================== */
+body.light-theme {
+  background: aqua;
+  color: black;
+}
+body.light-theme #Name { color: black; text-shadow: none; }
+body.light-theme .Buttons button,
+body.light-theme #hme button {
+  background: #4caf50;
+  border: none;
+}
+
+/* ===========================
+  ABOUT / SKILL PAGE UNIVERSAL LAYOUT
+=========================== */
+.container {
+  width: 85%;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+}
+
+.animated-heading {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  display: block;
+  width: 260px;
+  max-width: 100%;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill-item {
+  width: 160px;
+  background: rgba(255,255,255,0.06);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ===========================
+   100% RESPONSIVE (ALL PAGES)
+=========================== */
+
+@media (max-width: 768px) {
+  #Name { font-size: 3rem; }
+
+  .Buttons {
+    right: 15px;   /* SAFE ZONE FOR ALL PHONES */
+  }
+
+  .container {
+    width: 92%;
+    padding: 15px;
+  }
+
+  .animated-heading { font-size: 28px; }
+}
+
+@media (max-width: 480px) {
+  #Name { font-size: 2.6rem; padding-top: 6rem; }
+
+  .Buttons {
+    right: 10px;   /* NEVER CUT ON ANY PHONE */
+  }
+
+  .container {
+    width: 95%;
+    padding: 12px;
+  }
+
+  .animated-heading { font-size: 22px; }
+
+  .skill-item { width: 80%; }
+
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===========================
+   VANTA BACKGROUND FIX (ALL PAGES)
+=========================== */
+
+#vanta-bg {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: -999 !important;
+}
+
+#vanta-bg canvas {
+  pointer-events: none !important;
+}
+
+body::before { z-index: -998 !important; }
+
+body > * {
+  position: relative;
+  z-index: 10 !important;
+}
+
+
+
+
+
+/* ============================================
+   RESPONSIVE FIX FOR BUTTONS (ONLY MOBILE)
+   ============================================ */
+@media (max-width: 600px) {
+
+  /* BUTTON LIST BECOMES CENTER + VERTICAL */
+  .Buttons {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;   /* ek ke niche ek */
+    justify-content: center;
+    align-items: center;      /* center align */
+    gap: 15px;
+    margin: 20px auto 0 auto;
+    right: 0 !important;
+  }
+
+  /* BUTTON TEXT NEVER GOES OUTSIDE */
+  .Buttons button,
+  #hme button {
+    width: 90% !important;
+    max-width: 320px;
+    min-width: 200px;
+    height: auto !important;
+    padding: 12px 18px;
+    font-size: 15px;
+    text-align: center;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* THEME BUTTON SMALLER */
+  .theme-btn {
+    top: 12px;
+    left: 12px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+/* MOBILE SEARCH BAR SMALL SIZE */
+@media (max-width: 600px) {
+
+  #searchBox,
+  #categoryFilter {
+    width: 75% !important;       /* Google सारखी slim width */
+    font-size: 14px !important;
+    padding: 8px 14px !important; /* Google सारखा height */
+    border-radius: 50px !important; /* FULL ROUND SEARCH BAR */
+    border: 1px solid rgba(255,255,255,0.35) !important;
+    background: rgba(255,255,255,0.12) !important;
+    backdrop-filter: blur(6px); 
+  }
+
+  /* Search + filter gap थोडं Google सारखं */
+  .control-bar {
+    gap: 6px !important;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .projects {
+    grid-template-columns: 1fr !important; /* 1 column → no cut */
+  }
+
+  .project-card {
+    width: 95% !important;       /* safe width */
+    margin: auto !important;
+  }
+
+  body {
+    overflow-x: hidden !important; /* prevent horizontal cut */
+  }
+}
