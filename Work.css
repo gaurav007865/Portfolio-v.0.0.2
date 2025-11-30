@@ -263,3 +263,43 @@ canvas[vanta] {
     overflow-x: hidden !important;
   }
 }
+
+
+/* ============================================
+   FINAL MOBILE FIX — PERFECT 1 COLUMN + NO CUT
+   (ONLY MOBILE BELOW 600px)
+============================================ */
+@media (max-width: 600px) {
+
+  /* STRICT SINGLE COLUMN */
+  .work-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;  /* 1 column */
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 15px !important;   /* SAFE LEFT/RIGHT SPACE */
+    margin: 0 auto !important;
+    gap: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* CARDS PERFECT CENTER + SAFE WIDTH */
+  .work-card {
+    width: 100% !important;
+    max-width: 350px !important;   /* SAME SIZE CARDS */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* REMOVE EMPTY MIDDLE COLUMN */
+  .empty-space {
+    display: none !important;
+  }
+
+  /* PREVENT SIDE CUT */
+  html, body {
+    overflow-x: hidden !important;
+  }
+}
