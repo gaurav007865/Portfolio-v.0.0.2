@@ -266,30 +266,30 @@ canvas[vanta] {
 
 
 
-
-/* =================================================
+/* =====================================================
    MOBILE VIEW → 1 COLUMN + ONLY 2 CARDS VISIBLE
-================================================== */
+===================================================== */
 @media (max-width: 600px) {
 
-  /* SINGLE COLUMN GRID */
+  /* SINGLE COLUMN SCROLLABLE AREA */
   .work-container {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    padding: 0 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 20px !important;
-    margin: 0 auto !important;
-    max-height: calc(2 * 260px) !important;  /* 2 cards height */
-    overflow-y: auto !important;            /* scroll enabled */
-    scrollbar-width: none;                  /* hide scrollbar */
+
+    max-height: 520px !important;   /* shows exactly 2 cards */
+    overflow-y: scroll !important;
+    padding: 0 15px !important;
+    width: 100% !important;
+
+    scrollbar-width: none;
   }
 
   .work-container::-webkit-scrollbar {
-    display: none; /* hide scrollbar for Chrome */
+    display: none;
   }
 
-  /* CARDS SAME SIZE + CENTER */
+  /* CARDS PERFECT CENTER + SAFE WIDTH */
   .work-card {
     width: 100% !important;
     max-width: 350px !important;
@@ -299,13 +299,13 @@ canvas[vanta] {
     box-sizing: border-box !important;
   }
 
-  /* REMOVE EMPTY MIDDLE COLUMN */
+  /* REMOVE EMPTY SPACE */
   .empty-space {
     display: none !important;
   }
 
-  /* SAFE LAYOUT (no cutting) */
-  html, body {
+  /* NO SIDE CUT */
+  body, html {
     overflow-x: hidden !important;
   }
 }
